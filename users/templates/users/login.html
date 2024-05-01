@@ -1,0 +1,28 @@
+{% extends "quotes/base.html" %}
+
+{% block content %}
+
+{% if messages %}
+
+{% endif %}
+
+<form action="{% url 'users:login' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <label> Username:
+            {{ form.username }}
+        </label>
+    </div>
+
+    <div>
+        <label>Password:
+            {{ form.password }}
+        </label>
+    </div>
+
+    <div class="grid">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+{% endblock %}
